@@ -1,3 +1,3 @@
-# flutter_academy_online_shop
+**Online shop**
 
-A new Flutter project.
+Welcome to our internal training project, a key initiative within Flutter Academy 🚀
