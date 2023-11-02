@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:go_router/go_router.dart';
+// Local imports
+import 'package:flutter_academy_online_shop/router/router_config.dart';
 
 class ShopScreen extends StatelessWidget {
   const ShopScreen({super.key});
@@ -16,7 +19,11 @@ class ShopScreen extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Center(
-          child: Text(AppLocalizations.of(context)!.shopPageTitle),
+          child: TextButton(
+            child: const Text('Click for more details'),
+            onPressed: () => context
+                .goNamed(AppRouter.detailsName, pathParameters: {'id': '20'}),
+          ),
         ),
       ),
     );

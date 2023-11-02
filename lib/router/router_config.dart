@@ -13,7 +13,7 @@ class AppRouter {
   static const loginName = 'login';
   static const shopPath = '/shop';
   static const shopName = 'shop';
-  static const detailsPath = 'shop/:id';
+  static const detailsPath = ':id';
   static const detailsName = 'details';
   static const settingsPath = '/settings';
   static const settingsName = 'settings';
@@ -30,51 +30,50 @@ class AppRouter {
       navigatorKey: _rootNavigatorKey,
       routes: [
         StatefulShellRoute.indexedStack(
-            parentNavigatorKey: _rootNavigatorKey,
-            branches: [
-              StatefulShellBranch(
-                navigatorKey: _shopTabNavigatorKey,
-                routes: [
-                  GoRoute(
-                    path: shopPath,
-                    name: shopName,
-                    builder: (context, state) => const ShopScreen(),
-                    routes: [
-                      GoRoute(
-                        path: detailsPath,
-                        name: detailsName,
-                        builder: (context, state) => const DetailsScreen(),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-              StatefulShellBranch(
-                navigatorKey: _cartTabNavigatorKey,
-                routes: [
-                  GoRoute(
-                    path: cartPath,
-                    name: cartName,
-                    builder: (context, state) => const CartScreen(),
-                  ),
-                ],
-              ),
-              StatefulShellBranch(
-                navigatorKey: _settingsTabNavigatorKey,
-                routes: [
-                  GoRoute(
-                    path: settingsPath,
-                    name: settingsName,
-                    builder: (context, state) => const SettingsScreen(),
-                  ),
-                ],
-              ),
-            ],
-            builder: (context, state, navigationShell) {
-              // Return the widget that implements the custom shell (e.g a BottomNavigationBar).
-              // The [StatefulNavigationShell] is passed to be able to navigate to other branches in a stateful way.
-              return BottomNavigationScaffold(navigationShell: navigationShell);
-            }),
+          parentNavigatorKey: _rootNavigatorKey,
+          builder: (context, state, navigationShell) {
+            return BottomNavigationScaffold(navigationShell: navigationShell);
+          },
+          branches: [
+            StatefulShellBranch(
+              navigatorKey: _shopTabNavigatorKey,
+              routes: [
+                GoRoute(
+                  path: shopPath,
+                  name: shopName,
+                  builder: (context, state) => const ShopScreen(),
+                  routes: [
+                    GoRoute(
+                      path: detailsPath,
+                      name: detailsName,
+                      builder: (context, state) => const DetailsScreen(),
+                    )
+                  ],
+                ),
+              ],
+            ),
+            StatefulShellBranch(
+              navigatorKey: _cartTabNavigatorKey,
+              routes: [
+                GoRoute(
+                  path: cartPath,
+                  name: cartName,
+                  builder: (context, state) => const CartScreen(),
+                ),
+              ],
+            ),
+            StatefulShellBranch(
+              navigatorKey: _settingsTabNavigatorKey,
+              routes: [
+                GoRoute(
+                  path: settingsPath,
+                  name: settingsName,
+                  builder: (context, state) => const SettingsScreen(),
+                ),
+              ],
+            ),
+          ],
+        ),
         GoRoute(
           parentNavigatorKey: _rootNavigatorKey,
           path: loginPath,
