@@ -35,7 +35,7 @@ class DioClient {
     );
   }
 
-  Future<Map<String, dynamic>> getA(String path) async {
+  Future<Map<String, dynamic>> get(String path) async {
     try {
       final Response<dynamic> response = await _dio.get(path);
 
