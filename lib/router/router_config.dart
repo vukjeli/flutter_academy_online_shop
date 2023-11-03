@@ -41,12 +41,12 @@ class AppRouter {
                 GoRoute(
                   path: shopPath,
                   name: shopName,
-                  builder: (context, state) => const ShopScreen(),
+                  builder: (context, state) => ShopScreen(),
                   routes: [
                     GoRoute(
                       path: detailsPath,
                       name: detailsName,
-                      builder: (context, state) => const DetailsScreen(),
+                      builder: (context, state) => DetailsScreen(),
                     )
                   ],
                 ),
@@ -58,7 +58,7 @@ class AppRouter {
                 GoRoute(
                   path: cartPath,
                   name: cartName,
-                  builder: (context, state) => const CartScreen(),
+                  builder: (context, state) => CartScreen(),
                 ),
               ],
             ),
@@ -68,7 +68,7 @@ class AppRouter {
                 GoRoute(
                   path: settingsPath,
                   name: settingsName,
-                  builder: (context, state) => const SettingsScreen(),
+                  builder: (context, state) => SettingsScreen(),
                 ),
               ],
             ),

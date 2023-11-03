@@ -35,15 +35,15 @@ class DioClient {
     );
   }
 
-  Future<Map<String, dynamic>> get(String path) async {
+  Future<List<dynamic>> get(String path) async {
     try {
       final Response<dynamic> response = await _dio.get(path);
 
       if (response.data == null || response.data == 'null') {
-        return {};
+        return [];
       }
 
-      return response.data as Map<String, dynamic>;
+      return response.data as List<dynamic>;
     } on DioException catch (ex) {
       rethrow;
     }

@@ -1,12 +1,4 @@
 class Product {
-  int id;
-  String title;
-  double price;
-  String description;
-  String category;
-  String image;
-  Rating rating;
-
   Product({
     required this.id,
     required this.title,
@@ -17,11 +9,19 @@ class Product {
     required this.rating,
   });
 
+  int id;
+  String title;
+  num price;
+  String description;
+  String category;
+  String image;
+  Rating rating;
+
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
       id: json['id'] as int,
       title: json['title'] as String,
-      price: json['price'] as double,
+      price: (json['price'] as num).toDouble(),
       description: json['description'] as String,
       category: json['category'] as String,
       image: json['image'] as String,
@@ -31,17 +31,17 @@ class Product {
 }
 
 class Rating {
-  double rate;
-  int count;
-
   Rating({
     required this.rate,
     required this.count,
   });
 
+  num rate;
+  int count;
+
   factory Rating.fromJson(Map<String, dynamic> json) {
     return Rating(
-      rate: json['rate'] as double,
+      rate: json['rate'] as num,
       count: json['count'] as int,
     );
   }

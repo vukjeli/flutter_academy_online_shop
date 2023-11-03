@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_academy_online_shop/l10n/l10.dart';
 // Local imports
+import 'package:flutter_academy_online_shop/di/di.dart';
+import 'package:flutter_academy_online_shop/l10n/l10.dart';
 import 'router/router_config.dart';
 import 'theme/theme_config.dart';
 
 void main() {
+  DI.setup();
+
   runApp(const MainApp());
 }
 
