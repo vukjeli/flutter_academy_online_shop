@@ -9,10 +9,8 @@ final class DI {
     GetIt.I.registerSingleton<DioClient>(DioClient());
     GetIt.I.registerSingleton<ProductsRepository>(
         ProductsRepository(GetIt.I.get<DioClient>()));
-    GetIt.I.registerFactory<ProductsStore>(() {
-      final repo = GetIt.I.get<ProductsRepository>();
-      return ProductsStore(repo);
-    });
+    GetIt.I.registerSingleton<ProductsStore>(
+        ProductsStore(GetIt.I.get<ProductsRepository>()));
   }
 
   static T get<T extends Object>() {

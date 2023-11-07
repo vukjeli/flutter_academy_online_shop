@@ -58,13 +58,13 @@ ThemeData lightTheme = ThemeData(
     ),
   ),
   appBarTheme: const AppBarTheme(
-    color: Colors.orangeAccent,
+    color: Colors.lightBlue,
     iconTheme: IconThemeData(
       color: Colors.white,
     ),
   ),
   colorScheme: ColorScheme.fromSeed(
-    seedColor: Colors.orangeAccent,
+    seedColor: Colors.lightBlue,
   ),
 );
 

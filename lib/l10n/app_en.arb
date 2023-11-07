@@ -3,5 +3,8 @@
   "shopPageTitle": "Shop Page!",
   "cartPageTitle": "Cart Page!",
   "settingsPageTitle": "Settings Page!",
-  "detailsPageTitle": "Details Page!"
+  "detailsPageTitle": "Details Page!",
+  "categories": "Categories",
+  "all": "All",
+  "searchHint" : "Search products..."
 }

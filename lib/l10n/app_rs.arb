@@ -4,5 +4,9 @@
     "shopPageTitle": "Prodavnica!",
     "cartPageTitle": "Korpa!",
     "settingsPageTitle": "Podesavanja!",
-    "detailsPageTitle": "Detalji!"
+    "detailsPageTitle": "Detalji!",
+    "categories": "Kategorije",
+    "all": "Sve",
+    "searchHint" : "Pretrazi proizovde..."
+
 }
