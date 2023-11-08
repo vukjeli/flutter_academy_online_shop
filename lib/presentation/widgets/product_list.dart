@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-import 'package:flutter_academy_online_shop/router/router_config.dart';
 import 'package:flutter_academy_online_shop/domain/models/product.dart';
+import 'package:flutter_academy_online_shop/presentation/widgets/product_list_item.dart';
 
 class ProductList extends StatelessWidget {
   const ProductList({super.key, required this.products});
@@ -23,16 +22,14 @@ class ProductList extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
+        // childAspectRatio: MediaQuery.of(context).size.height / 900,
         children: products
             .map(
-              (p) => Container(
-                padding: const EdgeInsets.all(8),
-                color: Colors.teal[100],
-                child: TextButton(
-                  child: Text(p.title),
-                  onPressed: () => context.goNamed(AppRouter.detailsName,
-                      pathParameters: {'id': p.id.toString()}),
-                ),
+              (p) => ProductListItem(
+                id: p.id,
+                title: p.title,
+                price: p.price,
+                image: p.image,
               ),
             )
             .toList(),

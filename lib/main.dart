@@ -31,8 +31,8 @@ class MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      // theme: darkTheme,
       theme: lightTheme,
-      // theme: lightTheme,
       darkTheme: darkTheme,
       localizationsDelegates: L10n.delegates,
       supportedLocales: L10n.locales,

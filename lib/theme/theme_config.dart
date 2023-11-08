@@ -74,47 +74,47 @@ ThemeData darkTheme = ThemeData(
     displayLarge: TextStyle(
       fontSize: 96,
       fontWeight: FontWeight.w300,
-      color: Colors.black,
+      color: Colors.white,
     ),
     displayMedium: TextStyle(
       fontSize: 60,
       fontWeight: FontWeight.w400,
-      color: Colors.black,
+      color: Colors.white,
     ),
     displaySmall: TextStyle(
       fontSize: 48,
       fontWeight: FontWeight.w400,
-      color: Colors.black,
+      color: Colors.white,
     ),
     headlineMedium: TextStyle(
       fontSize: 34,
       fontWeight: FontWeight.w400,
-      color: Colors.black,
+      color: Colors.white,
     ),
     headlineSmall: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.w400,
-      color: Colors.black,
+      color: Colors.white,
     ),
     titleLarge: TextStyle(
       fontSize: 20,
       fontWeight: FontWeight.w500,
-      color: Colors.black,
+      color: Colors.white,
     ),
     bodyLarge: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w400,
-      color: Colors.black87,
+      color: Colors.white,
     ),
     bodyMedium: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w400,
-      color: Colors.black87,
+      color: Colors.white,
     ),
     bodySmall: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w400,
-      color: Colors.black54,
+      color: Colors.white,
     ),
     labelLarge: TextStyle(
       fontSize: 14,

@@ -1,10 +1,10 @@
 {
     "@@locale": "sr",
-    "loginPageTitle": "Login Strana!",
-    "shopPageTitle": "Prodavnica!",
-    "cartPageTitle": "Korpa!",
-    "settingsPageTitle": "Podesavanja!",
-    "detailsPageTitle": "Detalji!",
+    "loginPageTitle": "Login",
+    "shopPageTitle": "Prodavnica",
+    "cartPageTitle": "Korpa",
+    "settingsPageTitle": "Podesavanja",
+    "detailsPageTitle": "Detalji",
     "categories": "Kategorije",
     "all": "Sve",
     "searchHint" : "Pretrazi proizovde..."

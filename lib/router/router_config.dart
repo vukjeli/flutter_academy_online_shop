@@ -46,7 +46,11 @@ class AppRouter {
                     GoRoute(
                       path: detailsPath,
                       name: detailsName,
-                      builder: (context, state) => DetailsScreen(),
+                      builder: (context, GoRouterState state) => DetailsScreen(
+                        id: int.parse(
+                          state.pathParameters["id"]!,
+                        ),
+                      ),
                     )
                   ],
                 ),

@@ -1,9 +1,9 @@
 {
-  "loginPageTitle": "Login Page!",
-  "shopPageTitle": "Shop Page!",
-  "cartPageTitle": "Cart Page!",
-  "settingsPageTitle": "Settings Page!",
-  "detailsPageTitle": "Details Page!",
+  "loginPageTitle": "Login",
+  "shopPageTitle": "Shop",
+  "cartPageTitle": "Cart",
+  "settingsPageTitle": "Settings",
+  "detailsPageTitle": "Details",
   "categories": "Categories",
   "all": "All",
   "searchHint" : "Search products..."

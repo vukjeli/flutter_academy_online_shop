@@ -75,17 +75,4 @@ abstract class _ProductsStore with Store {
       filteredProducts = ObservableList.of(_allProducts);
     }
   }
-
-  // ReactionDisposer? _disposer;
-  //
-  // void _setupReactions() {
-  //   _disposer = reaction(
-  //     (_) => [selectedCategory, _searchValue, _allProducts],
-  //     (_) => _filterProducts(),
-  //   );
-  // }
-  //
-  // void dispose() {
-  //   _disposer?.call();
-  // }
 }
