@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_academy_online_shop/presentation/store/products_store.dart';
+import 'package:flutter_academy_online_shop/presentation/store/shop_store.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'package:flutter_academy_online_shop/di/di.dart';
@@ -13,7 +13,7 @@ class ShopFilters extends StatefulWidget {
 }
 
 class _ShopFiltersState extends State<ShopFilters> {
-  final _store = DI.get<ProductsStore>();
+  final _store = DI.get<ShopStore>();
 
   @override
   Widget build(BuildContext context) {

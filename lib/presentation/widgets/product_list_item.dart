@@ -34,9 +34,10 @@ class ProductListItem extends StatelessWidget {
               color: Colors.white,
               height: 100,
               width: double.infinity,
+              padding: const EdgeInsets.all(10),
               child: Image(
                 image: NetworkImage(image),
-                fit: BoxFit.fitHeight,
+                fit: BoxFit.contain,
               ),
             ),
             Padding(

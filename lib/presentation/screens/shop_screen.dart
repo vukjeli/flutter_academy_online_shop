@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_academy_online_shop/presentation/store/products_store.dart';
+import 'package:flutter_academy_online_shop/presentation/store/shop_store.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 // Local imports
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -10,10 +10,10 @@ import 'package:flutter_academy_online_shop/presentation/widgets/product_list.da
 class ShopScreen extends StatelessWidget {
   ShopScreen({super.key});
 
-  final _store = DI.get<ProductsStore>();
-
+  final _store = DI.get<ShopStore>();
   @override
   Widget build(final BuildContext context) {
+    print(_store.selectedCategory);
     return Scaffold(
       appBar: AppBar(
         title: Text(

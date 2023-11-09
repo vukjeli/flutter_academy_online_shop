@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'products_store.dart';
+part of 'shop_store.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,9 +8,9 @@ part of 'products_store.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
-mixin _$ProductsStore on _ProductsStore, Store {
+mixin _$ShopStore on _ShopStore, Store {
   late final _$isLoadingAtom =
-      Atom(name: '_ProductsStore.isLoading', context: context);
+      Atom(name: '_ShopStore.isLoading', context: context);
 
   @override
   bool get isLoading {
@@ -26,7 +26,7 @@ mixin _$ProductsStore on _ProductsStore, Store {
   }
 
   late final _$_searchValueAtom =
-      Atom(name: '_ProductsStore._searchValue', context: context);
+      Atom(name: '_ShopStore._searchValue', context: context);
 
   String get searchValue {
     _$_searchValueAtom.reportRead();
@@ -44,7 +44,7 @@ mixin _$ProductsStore on _ProductsStore, Store {
   }
 
   late final _$selectedCategoryAtom =
-      Atom(name: '_ProductsStore.selectedCategory', context: context);
+      Atom(name: '_ShopStore.selectedCategory', context: context);
 
   @override
   String get selectedCategory {
@@ -60,7 +60,7 @@ mixin _$ProductsStore on _ProductsStore, Store {
   }
 
   late final _$allCategoriesAtom =
-      Atom(name: '_ProductsStore.allCategories', context: context);
+      Atom(name: '_ShopStore.allCategories', context: context);
 
   @override
   ObservableList<String> get allCategories {
@@ -75,8 +75,24 @@ mixin _$ProductsStore on _ProductsStore, Store {
     });
   }
 
+  late final _$allProductsAtom =
+      Atom(name: '_ShopStore.allProducts', context: context);
+
+  @override
+  ObservableList<Product> get allProducts {
+    _$allProductsAtom.reportRead();
+    return super.allProducts;
+  }
+
+  @override
+  set allProducts(ObservableList<Product> value) {
+    _$allProductsAtom.reportWrite(value, super.allProducts, () {
+      super.allProducts = value;
+    });
+  }
+
   late final _$filteredProductsAtom =
-      Atom(name: '_ProductsStore.filteredProducts', context: context);
+      Atom(name: '_ShopStore.filteredProducts', context: context);
 
   @override
   ObservableList<Product> get filteredProducts {
@@ -91,9 +107,24 @@ mixin _$ProductsStore on _ProductsStore, Store {
     });
   }
 
-  late final _$fetchProductsAndCategoriesAsyncAction = AsyncAction(
-      '_ProductsStore.fetchProductsAndCategories',
-      context: context);
+  late final _$shoppingCartAtom =
+      Atom(name: '_ShopStore.shoppingCart', context: context);
+
+  @override
+  ObservableList<({int amount, int id})> get shoppingCart {
+    _$shoppingCartAtom.reportRead();
+    return super.shoppingCart;
+  }
+
+  @override
+  set shoppingCart(ObservableList<({int amount, int id})> value) {
+    _$shoppingCartAtom.reportWrite(value, super.shoppingCart, () {
+      super.shoppingCart = value;
+    });
+  }
+
+  late final _$fetchProductsAndCategoriesAsyncAction =
+      AsyncAction('_ShopStore.fetchProductsAndCategories', context: context);
 
   @override
   Future<dynamic> fetchProductsAndCategories() {
@@ -101,17 +132,28 @@ mixin _$ProductsStore on _ProductsStore, Store {
         .run(() => super.fetchProductsAndCategories());
   }
 
-  late final _$_ProductsStoreActionController =
-      ActionController(name: '_ProductsStore', context: context);
+  late final _$_ShopStoreActionController =
+      ActionController(name: '_ShopStore', context: context);
 
   @override
   void setSelectedCategory(String category) {
-    final _$actionInfo = _$_ProductsStoreActionController.startAction(
-        name: '_ProductsStore.setSelectedCategory');
+    final _$actionInfo = _$_ShopStoreActionController.startAction(
+        name: '_ShopStore.setSelectedCategory');
     try {
       return super.setSelectedCategory(category);
     } finally {
-      _$_ProductsStoreActionController.endAction(_$actionInfo);
+      _$_ShopStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void addToCart(int id, int amount) {
+    final _$actionInfo =
+        _$_ShopStoreActionController.startAction(name: '_ShopStore.addToCart');
+    try {
+      return super.addToCart(id, amount);
+    } finally {
+      _$_ShopStoreActionController.endAction(_$actionInfo);
     }
   }
 
@@ -121,7 +163,9 @@ mixin _$ProductsStore on _ProductsStore, Store {
 isLoading: ${isLoading},
 selectedCategory: ${selectedCategory},
 allCategories: ${allCategories},
-filteredProducts: ${filteredProducts}
+allProducts: ${allProducts},
+filteredProducts: ${filteredProducts},
+shoppingCart: ${shoppingCart}
     ''';
   }
 }

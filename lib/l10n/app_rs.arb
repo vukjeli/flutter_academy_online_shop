@@ -7,6 +7,9 @@
     "detailsPageTitle": "Detalji",
     "categories": "Kategorije",
     "all": "Sve",
-    "searchHint" : "Pretrazi proizovde..."
-
+    "searchHint" : "Pretrazi proizovde...",
+    "addToCart": "Dodaj u korpu",
+    "addToCartSuccess": "Proizvod je dodat u korpu",
+    "total": "Ukupno",
+    "payNow": "Plati"
 }

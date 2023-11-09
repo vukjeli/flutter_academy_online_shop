@@ -6,5 +6,9 @@
   "detailsPageTitle": "Details",
   "categories": "Categories",
   "all": "All",
-  "searchHint" : "Search products..."
+  "searchHint" : "Search products...",
+  "addToCart" : "Add to cart",
+  "addToCartSuccess": "Products were added to cart",
+  "total": "Total",
+  "payNow": "Pay Now"
 }
