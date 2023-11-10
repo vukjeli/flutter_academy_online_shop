@@ -11,9 +11,9 @@ class ShopScreen extends StatelessWidget {
   ShopScreen({super.key});
 
   final _store = DI.get<ShopStore>();
+
   @override
   Widget build(final BuildContext context) {
-    print(_store.selectedCategory);
     return Scaffold(
       appBar: AppBar(
         title: Text(

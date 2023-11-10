@@ -11,5 +11,6 @@
     "addToCart": "Dodaj u korpu",
     "addToCartSuccess": "Proizvod je dodat u korpu",
     "total": "Ukupno",
-    "payNow": "Plati"
+    "payNow": "Plati",
+    "emptyCartMessage": "Vasa korpa je prazna"
 }

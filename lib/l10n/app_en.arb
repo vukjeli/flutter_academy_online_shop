@@ -10,5 +10,6 @@
   "addToCart" : "Add to cart",
   "addToCartSuccess": "Products were added to cart",
   "total": "Total",
-  "payNow": "Pay Now"
+  "payNow": "Pay Now",
+  "emptyCartMessage": "Your cart is empty"
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:flutter_academy_online_shop/presentation/widgets/product_image.dart';
 import 'package:flutter_academy_online_shop/router/router_config.dart';
 
 class ProductListItem extends StatelessWidget {
@@ -35,16 +36,16 @@ class ProductListItem extends StatelessWidget {
               height: 100,
               width: double.infinity,
               padding: const EdgeInsets.all(10),
-              child: Image(
-                image: NetworkImage(image),
-                fit: BoxFit.contain,
+              child: ProductImage(
+                imageUrl: image,
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
               child: Text(
-                  title.length > 15 ? '${title.substring(0, 15)}...' : title),
-            )
+                title.length > 15 ? '${title.substring(0, 15)}...' : title,
+              ),
+            ),
           ],
         ),
       ),

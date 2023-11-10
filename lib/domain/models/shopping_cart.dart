@@ -1,1 +1,1 @@
-typedef ShoppingCartItemRecord = ({int id, int amount});
+typedef ShoppingCartItemRecord = ({int id, int amount, num itemPrice});

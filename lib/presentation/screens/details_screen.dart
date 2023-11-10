@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_academy_online_shop/presentation/store/shop_store.dart';
 import 'package:flutter_academy_online_shop/di/di.dart';
 import 'package:flutter_academy_online_shop/domain/models/product.dart';
 import 'package:flutter_academy_online_shop/presentation/widgets/item_counter.dart';
+import 'package:flutter_academy_online_shop/presentation/widgets/product_image.dart';
 
 class DetailsScreen extends StatefulWidget {
   const DetailsScreen({
@@ -41,14 +41,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
     }
   }
 
-  void _onAddToCart(int id) {
-    _store.addToCart(id, counter);
+  void _onAddToCart(int id, num itemPrice) {
+    _store.addToCart(id, counter, itemPrice);
     final snackBar = SnackBar(
       content: Text(AppLocalizations.of(context)!.addToCartSuccess),
     );
 
-    // Find the ScaffoldMessenger in the widget tree
-    // and use it to show a SnackBar.
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
     setState(() {
       counter = 0;
@@ -91,11 +89,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ],
               ),
-              child: Image(
-                image: NetworkImage(
-                  product.image,
-                ),
-                fit: BoxFit.contain,
+              child: ProductImage(
+                imageUrl: product.image,
               ),
             ),
             Padding(
@@ -169,7 +164,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         FilledButton(
                           onPressed: counter > 0
                               ? () {
-                                  _onAddToCart(product.id);
+                                  _onAddToCart(product.id, product.price);
                                 }
                               : null,
                           child: Text(
