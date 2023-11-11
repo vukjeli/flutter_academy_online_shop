@@ -1,1 +1,3 @@
-typedef ShoppingCartItemRecord = ({int id, int amount, num itemPrice});
+import 'product.dart';
+
+typedef ShoppingCartItemRecord = ({Product product, int amount});

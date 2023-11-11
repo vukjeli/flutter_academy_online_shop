@@ -43,7 +43,8 @@ class ProductListItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
               child: Text(
-                title.length > 15 ? '${title.substring(0, 15)}...' : title,
+                title,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],

@@ -72,17 +72,17 @@ abstract class _ShopStore with Store {
   }
 
   @action
-  void addToCart(int id, int amount, num itemPrice) {
-    final itemIndex = shoppingCart.indexWhere((item) => item.id == id);
+  void updateCart(Product product, int amount) {
+    final itemIndex =
+        shoppingCart.indexWhere((item) => item.product.id == product.id);
 
     if (itemIndex == -1) {
-      shoppingCart.add((id: id, amount: amount, itemPrice: itemPrice));
+      shoppingCart.add((product: product, amount: amount));
     } else {
       final cartItem = shoppingCart[itemIndex];
       final updatedItem = (
-        id: cartItem.id,
+        product: cartItem.product,
         amount: cartItem.amount + amount,
-        itemPrice: cartItem.itemPrice
       );
 
       shoppingCart[itemIndex] = updatedItem;
@@ -90,8 +90,11 @@ abstract class _ShopStore with Store {
   }
 
   @action
-  void removeFromCart(index) {
-    shoppingCart.removeAt(index);
+  void deleteFromCart(product) {
+    final indexOfProduct =
+        shoppingCart.indexWhere((item) => item.product.id == product.id);
+
+    shoppingCart.removeAt(indexOfProduct);
   }
 
   void _filterProducts() {

@@ -111,14 +111,13 @@ mixin _$ShopStore on _ShopStore, Store {
       Atom(name: '_ShopStore.shoppingCart', context: context);
 
   @override
-  ObservableList<({int amount, int id, num itemPrice})> get shoppingCart {
+  ObservableList<({int amount, Product product})> get shoppingCart {
     _$shoppingCartAtom.reportRead();
     return super.shoppingCart;
   }
 
   @override
-  set shoppingCart(
-      ObservableList<({int amount, int id, num itemPrice})> value) {
+  set shoppingCart(ObservableList<({int amount, Product product})> value) {
     _$shoppingCartAtom.reportWrite(value, super.shoppingCart, () {
       super.shoppingCart = value;
     });
@@ -148,22 +147,22 @@ mixin _$ShopStore on _ShopStore, Store {
   }
 
   @override
-  void addToCart(int id, int amount, num itemPrice) {
+  void updateCart(Product product, int amount) {
     final _$actionInfo =
-        _$_ShopStoreActionController.startAction(name: '_ShopStore.addToCart');
+        _$_ShopStoreActionController.startAction(name: '_ShopStore.updateCart');
     try {
-      return super.addToCart(id, amount, itemPrice);
+      return super.updateCart(product, amount);
     } finally {
       _$_ShopStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  void removeFromCart(dynamic index) {
+  void deleteFromCart(dynamic product) {
     final _$actionInfo = _$_ShopStoreActionController.startAction(
-        name: '_ShopStore.removeFromCart');
+        name: '_ShopStore.deleteFromCart');
     try {
-      return super.removeFromCart(index);
+      return super.deleteFromCart(product);
     } finally {
       _$_ShopStoreActionController.endAction(_$actionInfo);
     }

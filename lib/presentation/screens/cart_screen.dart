@@ -29,7 +29,7 @@ class CartScreen extends StatelessWidget {
               final totalPrice = _store.shoppingCart.fold(
                   0,
                   (num prev, element) =>
-                      prev + element.itemPrice * element.amount);
+                      prev + element.product.price * element.amount);
 
               return Column(
                 children: [
@@ -44,14 +44,12 @@ class CartScreen extends StatelessWidget {
                         final item = _store.shoppingCart[index];
                         final product = _store.allProducts.firstWhere(
                             (product) =>
-                                product.id == _store.shoppingCart[index].id);
+                                product.id ==
+                                _store.shoppingCart[index].product.id);
 
                         return ShoppingCartItem(
-                          id: item.id,
-                          counter: item.amount,
-                          title: product.title,
-                          imageUrl: product.image,
-                          itemIndex: index,
+                          product: item.product,
+                          amount: item.amount,
                         );
                       },
                     ),

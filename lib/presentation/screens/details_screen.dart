@@ -41,8 +41,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
     }
   }
 
-  void _onAddToCart(int id, num itemPrice) {
-    _store.addToCart(id, counter, itemPrice);
+  void _onAddToCart(Product product) {
+    _store.updateCart(product, counter);
     final snackBar = SnackBar(
       content: Text(AppLocalizations.of(context)!.addToCartSuccess),
     );
@@ -164,7 +164,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         FilledButton(
                           onPressed: counter > 0
                               ? () {
-                                  _onAddToCart(product.id, product.price);
+                                  _onAddToCart(product);
                                 }
                               : null,
                           child: Text(

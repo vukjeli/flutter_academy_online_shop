@@ -11,5 +11,8 @@
   "addToCartSuccess": "Products were added to cart",
   "total": "Total",
   "payNow": "Pay Now",
-  "emptyCartMessage": "Your cart is empty"
+  "emptyCartMessage": "Your cart is empty",
+  "deleteDialogContent": "Delete from cart?",
+  "deleteDialogCancel": "Cancel",
+  "deleteDialogOk": "Delete"
 }

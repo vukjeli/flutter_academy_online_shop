@@ -12,5 +12,8 @@
     "addToCartSuccess": "Proizvod je dodat u korpu",
     "total": "Ukupno",
     "payNow": "Plati",
-    "emptyCartMessage": "Vasa korpa je prazna"
+    "emptyCartMessage": "Vasa korpa je prazna",
+    "deleteDialogContent": "Obrisi iz korpe? ",
+    "deleteDialogCancel": "Odustani",
+    "deleteDialogOk": "Obrisi"
 }
