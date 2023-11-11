@@ -19,6 +19,9 @@ abstract class _ShopStore with Store {
   @observable
   bool isLoading = false;
 
+  @observable
+  bool isPaymentInProgress = false;
+
   @readonly
   String _searchValue = '';
 
@@ -38,6 +41,7 @@ abstract class _ShopStore with Store {
   ObservableList<ShoppingCartItemRecord> shoppingCart =
       ObservableList<ShoppingCartItemRecord>();
 
+  @action
   void setSearchValue(String value) {
     _searchValue = value;
     _filterProducts();
@@ -95,6 +99,26 @@ abstract class _ShopStore with Store {
         shoppingCart.indexWhere((item) => item.product.id == product.id);
 
     shoppingCart.removeAt(indexOfProduct);
+  }
+
+  @action
+  Future<void> payOrder() async {
+    if (isPaymentInProgress) return;
+
+    isPaymentInProgress = true;
+
+    try {
+      await Future.delayed(
+        const Duration(seconds: 3),
+        () {
+          shoppingCart.clear();
+        },
+      );
+    } catch (ex) {
+      print('ERROR');
+    } finally {
+      isPaymentInProgress = false;
+    }
   }
 
   void _filterProducts() {

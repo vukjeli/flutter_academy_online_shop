@@ -25,6 +25,22 @@ mixin _$ShopStore on _ShopStore, Store {
     });
   }
 
+  late final _$isPaymentInProgressAtom =
+      Atom(name: '_ShopStore.isPaymentInProgress', context: context);
+
+  @override
+  bool get isPaymentInProgress {
+    _$isPaymentInProgressAtom.reportRead();
+    return super.isPaymentInProgress;
+  }
+
+  @override
+  set isPaymentInProgress(bool value) {
+    _$isPaymentInProgressAtom.reportWrite(value, super.isPaymentInProgress, () {
+      super.isPaymentInProgress = value;
+    });
+  }
+
   late final _$_searchValueAtom =
       Atom(name: '_ShopStore._searchValue', context: context);
 
@@ -132,8 +148,27 @@ mixin _$ShopStore on _ShopStore, Store {
         .run(() => super.fetchProductsAndCategories());
   }
 
+  late final _$payOrderAsyncAction =
+      AsyncAction('_ShopStore.payOrder', context: context);
+
+  @override
+  Future<void> payOrder() {
+    return _$payOrderAsyncAction.run(() => super.payOrder());
+  }
+
   late final _$_ShopStoreActionController =
       ActionController(name: '_ShopStore', context: context);
+
+  @override
+  void setSearchValue(String value) {
+    final _$actionInfo = _$_ShopStoreActionController.startAction(
+        name: '_ShopStore.setSearchValue');
+    try {
+      return super.setSearchValue(value);
+    } finally {
+      _$_ShopStoreActionController.endAction(_$actionInfo);
+    }
+  }
 
   @override
   void setSelectedCategory(String category) {
@@ -172,6 +207,7 @@ mixin _$ShopStore on _ShopStore, Store {
   String toString() {
     return '''
 isLoading: ${isLoading},
+isPaymentInProgress: ${isPaymentInProgress},
 selectedCategory: ${selectedCategory},
 allCategories: ${allCategories},
 allProducts: ${allProducts},

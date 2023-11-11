@@ -55,7 +55,7 @@ class ShoppingCartItem extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              height: 175,
+              height: 150,
               width: 120,
               clipBehavior: Clip.antiAlias,
               padding: const EdgeInsets.all(10),
@@ -66,7 +66,7 @@ class ShoppingCartItem extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                height: 175,
+                height: 150,
                 padding: const EdgeInsets.all(10),
                 child: Column(
                   children: [

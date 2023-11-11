@@ -15,5 +15,7 @@
     "emptyCartMessage": "Vasa korpa je prazna",
     "deleteDialogContent": "Obrisi iz korpe? ",
     "deleteDialogCancel": "Odustani",
-    "deleteDialogOk": "Obrisi"
+    "deleteDialogOk": "Obrisi",
+    "paymentFinished": "Uspesno ste zavrsili kupovinu",
+    "toggleTheme": "Promeni temu"
 }

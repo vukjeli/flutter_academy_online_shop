@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 // Local imports
 import 'package:flutter_academy_online_shop/di/di.dart';
 import 'package:flutter_academy_online_shop/l10n/l10.dart';
@@ -30,14 +31,18 @@ class MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      // theme: darkTheme,
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      localizationsDelegates: L10n.delegates,
-      supportedLocales: L10n.locales,
-      locale: const Locale('en'),
-      routerConfig: AppRouter.router,
+    return AdaptiveTheme(
+      light: lightTheme,
+      dark: darkTheme,
+      initial: AdaptiveThemeMode.system,
+      builder: (theme, darkTheme) => MaterialApp.router(
+        theme: theme,
+        darkTheme: darkTheme,
+        localizationsDelegates: L10n.delegates,
+        supportedLocales: L10n.locales,
+        locale: const Locale('en'),
+        routerConfig: AppRouter.router,
+      ),
     );
   }
 }

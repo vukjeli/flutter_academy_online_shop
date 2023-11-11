@@ -55,7 +55,6 @@ class _BottomNavigationScaffoldState extends State<BottomNavigationScaffold> {
         onTap: (index) {
           widget.navigationShell.goBranch(index,
               initialLocation: index == widget.navigationShell.currentIndex);
-          setState(() {});
         },
       ),
     );

@@ -14,5 +14,7 @@
   "emptyCartMessage": "Your cart is empty",
   "deleteDialogContent": "Delete from cart?",
   "deleteDialogCancel": "Cancel",
-  "deleteDialogOk": "Delete"
+  "deleteDialogOk": "Delete",
+  "paymentFinished": "Your order is completed",
+  "toggleTheme": "Toggle theme"
 }
