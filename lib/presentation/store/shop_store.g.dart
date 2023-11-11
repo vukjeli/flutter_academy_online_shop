@@ -41,6 +41,22 @@ mixin _$ShopStore on _ShopStore, Store {
     });
   }
 
+  late final _$isPaymentCompletedAtom =
+      Atom(name: '_ShopStore.isPaymentCompleted', context: context);
+
+  @override
+  bool get isPaymentCompleted {
+    _$isPaymentCompletedAtom.reportRead();
+    return super.isPaymentCompleted;
+  }
+
+  @override
+  set isPaymentCompleted(bool value) {
+    _$isPaymentCompletedAtom.reportWrite(value, super.isPaymentCompleted, () {
+      super.isPaymentCompleted = value;
+    });
+  }
+
   late final _$_searchValueAtom =
       Atom(name: '_ShopStore._searchValue', context: context);
 
@@ -148,12 +164,12 @@ mixin _$ShopStore on _ShopStore, Store {
         .run(() => super.fetchProductsAndCategories());
   }
 
-  late final _$payOrderAsyncAction =
-      AsyncAction('_ShopStore.payOrder', context: context);
+  late final _$checkoutAsyncAction =
+      AsyncAction('_ShopStore.checkout', context: context);
 
   @override
-  Future<void> payOrder() {
-    return _$payOrderAsyncAction.run(() => super.payOrder());
+  Future<void> checkout() {
+    return _$checkoutAsyncAction.run(() => super.checkout());
   }
 
   late final _$_ShopStoreActionController =
@@ -204,10 +220,22 @@ mixin _$ShopStore on _ShopStore, Store {
   }
 
   @override
+  void resetPaymentStatus() {
+    final _$actionInfo = _$_ShopStoreActionController.startAction(
+        name: '_ShopStore.resetPaymentStatus');
+    try {
+      return super.resetPaymentStatus();
+    } finally {
+      _$_ShopStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 isLoading: ${isLoading},
 isPaymentInProgress: ${isPaymentInProgress},
+isPaymentCompleted: ${isPaymentCompleted},
 selectedCategory: ${selectedCategory},
 allCategories: ${allCategories},
 allProducts: ${allProducts},

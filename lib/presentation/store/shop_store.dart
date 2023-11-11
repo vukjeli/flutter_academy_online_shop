@@ -22,6 +22,9 @@ abstract class _ShopStore with Store {
   @observable
   bool isPaymentInProgress = false;
 
+  @observable
+  bool isPaymentCompleted = false;
+
   @readonly
   String _searchValue = '';
 
@@ -102,23 +105,29 @@ abstract class _ShopStore with Store {
   }
 
   @action
-  Future<void> payOrder() async {
+  Future<void> checkout() async {
     if (isPaymentInProgress) return;
 
     isPaymentInProgress = true;
 
     try {
       await Future.delayed(
-        const Duration(seconds: 3),
+        const Duration(seconds: 2),
         () {
           shoppingCart.clear();
         },
       );
+      isPaymentCompleted = true;
     } catch (ex) {
       print('ERROR');
     } finally {
       isPaymentInProgress = false;
     }
+  }
+
+  @action
+  void resetPaymentStatus() {
+    isPaymentCompleted = false;
   }
 
   void _filterProducts() {

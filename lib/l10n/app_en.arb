@@ -10,7 +10,7 @@
   "addToCart" : "Add to cart",
   "addToCartSuccess": "Products were added to cart",
   "total": "Total",
-  "payNow": "Pay Now",
+  "checkout": "Checkout",
   "emptyCartMessage": "Your cart is empty",
   "deleteDialogContent": "Delete from cart?",
   "deleteDialogCancel": "Cancel",

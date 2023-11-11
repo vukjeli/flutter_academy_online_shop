@@ -62,7 +62,7 @@ class AppRouter {
                 GoRoute(
                   path: cartPath,
                   name: cartName,
-                  builder: (context, state) => const CartScreen(),
+                  builder: (context, state) => CartScreen(),
                 ),
               ],
             ),
