@@ -41,6 +41,9 @@ abstract class _ShopStore with Store {
   ObservableList<Product> filteredProducts = ObservableList<Product>();
 
   @observable
+  String error = "";
+
+  @observable
   ObservableList<ShoppingCartItemRecord> shoppingCart =
       ObservableList<ShoppingCartItemRecord>();
 
@@ -73,6 +76,11 @@ abstract class _ShopStore with Store {
 
       _filterProducts();
     } on DioException catch (ex) {
+      // ex.message;
+
+      if (ex.message != null) {
+        error = ex.message!;
+      }
     } finally {
       isLoading = false;
     }
@@ -135,7 +143,7 @@ abstract class _ShopStore with Store {
 
     if (selectedCategory.isNotEmpty || _searchValue.isNotEmpty) {
       final products = allProducts.where((element) =>
-          element.category == selectedCategory &&
+          element.category.toLowerCase().contains(selectedCategory) &&
           element.title.toLowerCase().contains(_searchValue.toLowerCase()));
       filteredProducts = ObservableList.of(products);
     } else {

@@ -17,5 +17,7 @@
     "deleteDialogCancel": "Odustani",
     "deleteDialogOk": "Obrisi",
     "paymentFinished": "Uspesno ste zavrsili kupovinu",
-    "toggleTheme": "Promeni temu"
+    "toggleTheme": "Promeni temu",
+    "noProducts": "Nemamo proizvode koji odgovaraju izabranim filterima"
+
 }

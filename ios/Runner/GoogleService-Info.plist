@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyCQx-VHRkXhX_25yTWbmFmovnT-5XMyUsE</string>
+	<string>AIzaSyDpoObh3EiI1A4AwY_5i9TctAniG6dChT8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>879630204661</string>
+	<string>896631846539</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.flutterAcademyOnlineShop</string>
 	<key>PROJECT_ID</key>
-	<string>flutteronlineshop-60767</string>
+	<string>flutter-shop-ce076</string>
 	<key>STORAGE_BUCKET</key>
-	<string>flutteronlineshop-60767.appspot.com</string>
+	<string>flutter-shop-ce076.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:879630204661:ios:042a0898d51167547e4fbc</string>
+	<string>1:896631846539:ios:5eb7ea8176a9635f95c68e</string>
 </dict>
 </plist>

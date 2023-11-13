@@ -139,6 +139,21 @@ mixin _$ShopStore on _ShopStore, Store {
     });
   }
 
+  late final _$errorAtom = Atom(name: '_ShopStore.error', context: context);
+
+  @override
+  String get error {
+    _$errorAtom.reportRead();
+    return super.error;
+  }
+
+  @override
+  set error(String value) {
+    _$errorAtom.reportWrite(value, super.error, () {
+      super.error = value;
+    });
+  }
+
   late final _$shoppingCartAtom =
       Atom(name: '_ShopStore.shoppingCart', context: context);
 
@@ -240,6 +255,7 @@ selectedCategory: ${selectedCategory},
 allCategories: ${allCategories},
 allProducts: ${allProducts},
 filteredProducts: ${filteredProducts},
+error: ${error},
 shoppingCart: ${shoppingCart}
     ''';
   }

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "879630204661",
-    "project_id": "flutteronlineshop-60767",
-    "storage_bucket": "flutteronlineshop-60767.appspot.com"
+    "project_number": "896631846539",
+    "project_id": "flutter-shop-ce076",
+    "storage_bucket": "flutter-shop-ce076.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:879630204661:android:6199f722b1eb74a47e4fbc",
+        "mobilesdk_app_id": "1:896631846539:android:21b250784a31737b95c68e",
         "android_client_info": {
           "package_name": "com.example.flutter_academy_online_shop"
         }
