@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_academy_online_shop/presentation/widgets/widget_tree.dart';
 import 'package:go_router/go_router.dart';
 // Local imports
 import 'package:flutter_academy_online_shop/presentation/screens/cart_screen.dart';
 import 'package:flutter_academy_online_shop/presentation/screens/details_screen.dart';
-import 'package:flutter_academy_online_shop/presentation/screens/login_screen.dart';
 import 'package:flutter_academy_online_shop/presentation/screens/settings_screen.dart';
 import 'package:flutter_academy_online_shop/presentation/screens/shop_screen.dart';
 import 'package:flutter_academy_online_shop/presentation/widgets/bottom_navigation_scaffold.dart';
@@ -82,7 +82,7 @@ class AppRouter {
           parentNavigatorKey: _rootNavigatorKey,
           path: loginPath,
           name: loginName,
-          builder: (context, state) => const LoginScreen(),
+          builder: (context, state) => const WidgetTree(),
         ),
       ]);
 }
