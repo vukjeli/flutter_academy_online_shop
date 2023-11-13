@@ -16,5 +16,6 @@
   "deleteDialogCancel": "Cancel",
   "deleteDialogOk": "Delete",
   "paymentFinished": "Your order is completed",
-  "toggleTheme": "Toggle theme"
+  "toggleTheme": "Toggle theme",
+  "noProducts": "There are no items matching the applied filters"
 }

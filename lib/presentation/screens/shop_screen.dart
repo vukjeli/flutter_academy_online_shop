@@ -25,6 +25,13 @@ class ShopScreen extends StatelessWidget {
         child: Column(
           children: [
             const ShopFilters(),
+            Observer(builder: (_) {
+              if (_store.error.isNotEmpty) {
+                return Text(_store.error);
+              }
+
+              return const SizedBox();
+            }),
             Observer(
               builder: (BuildContext context) {
                 final products = _store.filteredProducts;
